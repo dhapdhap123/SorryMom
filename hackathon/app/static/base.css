@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    max-width: 430px;
+}
+header{
+    width: 88%;
+}
+section{
+    width: 88%;
+}
