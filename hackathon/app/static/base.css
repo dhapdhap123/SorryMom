@@ -10,32 +10,37 @@
     padding: 0;
     margin: 0;
 }
+html{
+  background-color: white;
+}
 body {
     max-width: 430px;
+    height: 100vh;
     display: flex;
     align-items: center;
     /* justify-content: center; */
     flex-direction: column;
     background-color: #fffcf2;
-    margin: 0 auto;
-  
+    margin: 0 auto; 
 }
+
 button,
 input,
 textarea {
   font-family: "UhBeeJJIBBABBA";
 }
-nav {
+header {
     width: 88%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px 0;
-  }
+}
   
 section{
     width: 88%;
+    height: 83%;
 }
 a {
     position: relative;
@@ -47,3 +52,10 @@ a {
     position: relative;
     /* left: 160px; */
   }
+footer{
+  width: 88%;
+  height: 7%;
+}
+p{
+  text-align: center;
+}

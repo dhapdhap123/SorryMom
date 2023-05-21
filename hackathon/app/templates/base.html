@@ -13,12 +13,18 @@
     {% block css %}{% endblock css %}
 </head>
 <body>
-    <nav>
+    <header>
         <a href="{% url 'home' %}" >Home</a>
         <h1>{% block h1 %}{% endblock h1 %}</h1>
-    </nav>
+    </header>
     <section>
         {% block section %}{% endblock section %}
     </section>
+    <footer>
+        <div>
+            <p style="font-size:0.9rem;">Developed by KU NEXT, Team 'SorryMom'</p>
+            <p style="font-size:0.5em;">Lee Youngchan, Park Gyungbin, Son Yeowon<br/>Kim Hyein, Choi Seongho</p>
+        </div>
+    </footer>
 </body>
 </html>
