@@ -7,13 +7,14 @@
 <div id="diary-container">
     <div id="date-container">
         <div>
-            <span class="year">${year}</span>년 
-            <span class="month">${month}</span>월 
-            <span class="day">${day}</span>일 
-            <span class="weekday">${weekday}</span>요일
+            <span class="year">${year}</span><span>년</span> 
+            <span class="month">${month}</span><span>월</span> 
+            <span class="day">${day}</span><span>일</span> 
+            <span class="weekday">${weekday}</span><span>요일</span>
         </div>
-        <span class="weather">맑음!</span>
+        <span class="weather">🌞맑음!</span>
     </div>
+    
     <div class="img_cut"> 
         <img
         id="image-preview"
@@ -21,39 +22,54 @@
         alt="Preview"
         />
     </div>
-    <div class="title_div">{{title}}</div>
+    
+    <div class="title_div">제목 : {{title}}</div>
+
     <div class="manuscript-container">
       <div class="manuscript">
         <div id="displayArea" class="content-div">{{content}}</div>
       </div>
     </div>
   </div>
+
+  <div class="downloadWrapper">
+    <button type="button" class="styled_button" onclick="saveImage()">저장</button>
+  </div>
+  
+  <hr style="width: 100%;">
+  
   <div class="user_input">
     <form id="diary-form" action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="downloadWrapper">
-            <button type="button" class="styled_button" onclick="saveImage()">저장</button>
-        </div>
+        
         <div class="date"></div>
-        <hr style="width: 100%;">
-        <div class="title">
-            <p><b>제목</b></p>
-        <input
-            type="text"
-            id="title"
-            name="title"
-            placeholder="제목을 입력해주세요"
-            value="{{title}}"
-        />
+  
+        <div class="title input_div">
+          <p class="input_left">제목</p>
+          <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="제목을 입력해주세요"
+              value="{{title}}"
+              class="titleInput input_center"
+              maxlength="15"
+          />
+          <div class="input_right"></div>
         </div>
-        <div class="content">
-            <p><b>내용</b></p>
+        <div class="content input_div">
+          <p class="input_left">내용</p>
             <textarea
                 name="content"
                 id="myInput"
+                cols="10"
+                rows="3"
+                class="contentInput input_center"
+                maxlength = "59"
                 placeholder="내용을 입력해주세요"
                 oninput="displayInput()"
             >{{content}}</textarea>
+            <div class="input_right"></div>
         </div>
         <div class="upload_img">
             <label for="image-input" class="styled_button">그림 올리기</label>

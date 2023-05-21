@@ -20,6 +20,13 @@
   display: flex;
   justify-content: center;
 }
+textarea{
+  resize: none;
+  padding: 1%;
+}
+input{
+  padding: 1%;
+}
 
 .title_div{
     font-size: 1.15em;

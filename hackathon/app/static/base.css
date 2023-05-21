@@ -15,7 +15,7 @@ html{
 }
 body {
     max-width: 430px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     /* justify-content: center; */
@@ -41,10 +41,12 @@ header {
 section{
     width: 88%;
     height: 83%;
+    flex-grow: 1;
 }
 a {
     position: relative;
     color: #519d9e;
+    text-decoration: none;
   }
   h1 {
     font-family: "UhBeeJJIBBABBA";
@@ -54,7 +56,7 @@ a {
   }
 footer{
   width: 88%;
-  height: 7%;
+  height: 5%;
 }
 p{
   text-align: center;
