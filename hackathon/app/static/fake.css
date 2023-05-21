@@ -22,9 +22,6 @@
     position: relative;
     bottom: 250px;
 }
-.title{
-
-}
 .container {
     width: 100%;
     margin: 0 auto;
@@ -109,6 +106,9 @@
     position: absolute;
     top: 950px;
     width: 300px;
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
 }
 
 .styled_button{

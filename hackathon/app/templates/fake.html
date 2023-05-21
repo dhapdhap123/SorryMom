@@ -31,7 +31,7 @@
             </div>
 
             <div class="user_input">
-                <form action ="" method = "post" enctype="multipart/form-data">
+                <form enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="downloadWrapper">
                         <button class="styled_button download" type="button" onclick="saveImage()">저장</button>
@@ -61,12 +61,9 @@
             </br>
             <hr style="width:100%;">
             </br>
-            <div class = "fame_container">
-                <p>명예의 전당</p>
-                <a class="see_more" href="{% url 'home' %}">더보기</a>
-                <div class="fame_each"></div>
+            <div class="fame_container">
+                <a href="https://instagram.com/next_pngmakers?igshid=NTc4MTIwNjQ2YQ==">명예의 전당 구경가기</a>
             </div>
-
             <div class="modal hidden" id="modal_1">
                 <div class="modal-content">
                     <div class="box">
@@ -116,6 +113,7 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         const titleDiv = document.querySelector('.title_div')
         const contentDiv = document.querySelector('.content_div')
@@ -208,17 +206,35 @@
         closeBtn_2.addEventListener("click", closeModal_2);
         overlay_2.addEventListener("click", closeModal_2);
     
-    function saveImage() {
-      const container = document.getElementById("our_example");
+    const saveImage = async () => {
+        const container = document.getElementById("our_example");
 
-      html2canvas(container).then(function (canvas) {
-        const image = canvas.toDataURL(); // 스크린샷 이미지 데이터
-        const link = document.createElement("a");
-        link.href = image;
-        link.download = "fake_screenshot.png";
-        link.click();
-      });
-    }
+        let image; // image 변수를 함수 스코프에 선언
+
+        try {
+            const canvas = await html2canvas(container); // html2canvas 함수를 await로 호출하여 canvas를 얻음
+            image = canvas.toDataURL(); // 스크린샷 이미지 데이터를 image 변수에 할당
+
+            const link = document.createElement("a");
+            link.href = image;
+            link.download = "fake_screenshot.png";
+            link.click();
+
+            const base64String = image;
+            const startIndex = base64String.indexOf(',') + 1;
+            const trimmedString = base64String.substring(startIndex);
+
+            const res = await axios.post('/create_fake/', {
+            title: titleInput.value == undefined ? '' : titleInput.value,
+            content: contentInput.value == undefined ? '' : contentInput.value,
+            sign: signInput.value == undefined ? '' : signInput.value,
+            img: trimmedString
+            });
+            console.log(res);
+        } catch (e) {
+            console.log(e);
+        }
+        };
 
     const onMarkChange = (e) => {
         const preview = document.getElementById("image-preview");
@@ -242,5 +258,11 @@
             });
         }
     }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log('hi');
+    }
+
     </script>
 {% endblock %}
