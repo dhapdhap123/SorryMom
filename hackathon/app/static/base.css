@@ -1,13 +1,49 @@
+@font-face {
+    font-family: "UhBeeJJIBBABBA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 *{
     padding: 0;
     margin: 0;
 }
 body {
     max-width: 430px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    background-color: #fffcf2;
+    margin: 0 auto;
+  
 }
-header{
+button,
+input,
+textarea {
+  font-family: "UhBeeJJIBBABBA";
+}
+nav {
     width: 88%;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  
 section{
     width: 88%;
 }
+a {
+    position: relative;
+    color: #519d9e;
+  }
+  h1 {
+    font-family: "UhBeeJJIBBABBA";
+    min-width: 90px;
+    position: relative;
+    /* left: 160px; */
+  }

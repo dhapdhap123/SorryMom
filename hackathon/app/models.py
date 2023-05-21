@@ -15,3 +15,11 @@ class Diary(models.Model):
     created_dt = models.DateTimeField(auto_now_add = True)
     base_img = models.TextField()
     honered = models.BooleanField(default=False)
+
+class MarkExample(models.Model):
+    title = models.CharField(max_length = 20)
+    base_img = models.TextField()
+
+class StampExample(models.Model):
+    title = models.CharField(max_length = 20)
+    base_img = models.TextField()

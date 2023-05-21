@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>랜딩 페이지</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="text-neon1 wave-text">차린건 없지만~</h1>
+      <img class="a" src="../static/images/landingPage/8.png" />
+      <img class="arrow" src="../static/images/landingPage/3.png" />
+
+      <div class="box">
+        <a href="{% url 'fake' %}"><img class="pic" src="../static/images/landingPage/a.png" /></a>
+        <a href="{% url 'diary' %}"><img class="pic" src="../static/images/landingPage/b.png" /></a>
+        
+    
+      </div>
+      
+      <img class="arrow1 text-neon" src="../static/images/landingPage/6.png" />
+      <img class="arrow1 text-neon" src="../static/images/landingPage/5.png" />
+
+      <p class="text-neon " >클릭하쉴?</p>
+    </div>
+    <style>
+      .a {
+        position: absolute;
+        top: 60px;
+        z-index: -2;
+        width: 250px;
+      }
+
+      body {
+        background-image: repeating-linear-gradient(
+          rgb(218, 29, 29),
+          rgb(247, 160, 0),
+          yellow,
+          green,
+          blue,
+          indigo,
+          purple
+        );
+        max-width: 430px;
+        
+        background-size: 100% 200%;
+        animation: flowBackground 10s linear infinite;
+
+      }
+
+      @keyframes flowBackground {
+  0% {
+    background-position: 40% 40%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+    
+  
+
+      h1 {
+        font-family: "DOSPilgiMedium";
+        margin-top: 15%;
+        margin-bottom: 5px;
+
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      p {
+        font-family: "DOSPilgiMedium";
+        font-size: 60px;
+        margin-left: 20%;
+        margin-top: 50px;
+        font-weight: 800;
+        line-height: 1.5;
+        color: rgb(255, 101, 232);
+      }
+
+
+
+      .bo {
+        width: 120px;
+      }
+
+      .arrow {
+        width: 150px;
+        margin-left: 250px;
+      }
+
+      .arrow1 {
+        width: 150px;
+        margin-top: 20px;
+        margin-left: 30px;
+      }
+    </style>
+  </body>
+</html>

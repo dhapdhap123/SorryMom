@@ -1,0 +1,228 @@
+@font-face {
+    font-family: "UhBeeJJIBBABBA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+*{
+    font-family: 'UhBeeJJIBBABBA';
+}
+
+.layer{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title_div{
+    font-size: 1.15em;
+    font-weight:bold;
+    position: relative;
+    bottom: 250px;
+}
+.title{
+
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+ .child {
+    position: relative;
+  }
+  
+  .stamp_container_div{
+    position: absolute;
+    top: 50px;
+    left: 185px;
+  }
+
+  .stamp_div_1 {
+    position: absolute;
+    top: 53px;
+    left: 185px;
+  }
+  
+  .stamp_div_2 {
+    position: absolute;
+    top: 230px;
+    left: 150px;
+  }
+  
+  .content_div {
+    position: relative;
+    bottom: 230px;
+    padding: 0 7.5%;
+    line-height: 35px;
+  }
+  
+  .background_div {
+    position: absolute;
+    top: 100px;
+  }
+  
+  .bck_img {
+    opacity: 0.2;
+  }
+  
+  .sign_div {
+    position: absolute;
+    bottom: 30px;
+  }
+  
+  .our_example {
+    display: grid;
+    width: 225px;
+    /* height: auto; */
+    height: 300px;
+    border: 1px solid rgb(87, 87, 87);
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    text-align: center;
+    place-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .user_input {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .upload_img {
+    position: relative;
+    top:20px;
+  }
+
+  .downloadWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+.fame_container {
+    position: absolute;
+    top: 950px;
+    width: 300px;
+}
+
+.styled_button{
+  display: inline-block;
+  border: 0.5px solid rgba(195, 195, 195, 0.599);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(244, 244, 244, 0.73);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: #c2e3e3;
+  color: #519d9e;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+  
+.modal-content {
+    position: relative;
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: white;
+    background-color: white;
+
+    cursor: pointer;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+i {
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.open-button{
+    cursor: pointer;
+}
+
+.mark_div{
+    padding-top: 25px;
+    width: 20%;
+    height: 100%;
+}
+
+.mark_img{
+    width: 100%;
+    height: 30%;
+}
+
+.add_img{
+    cursor: pointer;
+    width: 100%;
+}
+.custom-input {
+    position: relative;
+    display: inline-block;
+}
+  
+.custom-button {
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px;
+}
+  
+.mark_img.add_img {
+    /* 기존 input 스타일 */
+    display: none;
+}
+  
+.image-preview_2{
+    position: absolute;
+    margin-left:20px;
+    margin-top:10px;
+    opacity:0.7;
+
+}

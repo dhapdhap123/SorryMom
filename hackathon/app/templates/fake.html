@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block h1 %}구 라 증{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'fake.css' %}" />
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+{% block section %}
+    <div class="container">
+        <div class="child">
+            <div class="our_example" id="our_example">
+                <img src="../static/images/layer.png" class="layer" />
+                <div class="title_div">{{title}}</div>
+                <div class="stamp_container_div">
+                    <img src="../static/images/stampbox.png" height="30px" width="30px">
+                </div>
+                <div class="stamp_div_1">
+                    <img class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="15px" width="15px">
+                </div>
+                <div class="content_div">{{content}}</div>
+                <div class="background_div">
+                    <img id="image-preview" src="data:image/png;base64,{{markImg1}}" alt="Preview" class="bck_img" height="130px" width="130px"/>
+                </div>
+                <div class="sign_div">{{sign}}</div>
+                <div class="stamp_div_2">
+                    <img class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="50px" width="50px">
+                </div>    
+            </div>
+
+            <div class="user_input">
+                <form action ="" method = "post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="downloadWrapper">
+                        <button class="styled_button download" type="button" onclick="saveImage()">저장</button>
+                    </div>
+                </br>
+                <hr style="width: 100%;">
+                    <div class="title">
+                    </br>
+                        <p>제목</p>
+                        <input type ="text" id="title" name="title" class="titleInput" placeholder="제목을 입력해 주세요." value="{{title}}" maxlength='10'/>
+                    </div>
+                    <div class="content">
+                    </br>
+                        <p>내용</p>
+                        <textarea name ="content" id="content" cols="30" rows="10" class="contentInput" placeholder="내용을 입력해 주세요." maxlength='54'>{{content}}</textarea>
+                    </div>
+                    <div class="sign">
+                    </br>
+                        <p>싸인</p>
+                        <input type="text" id="sign" name="sign" class="signInput" placeholder="고려대학교 총장 김동원" value="{{sign}}" maxlength='13'/>
+                    </div>        
+                </br>       
+                </form>
+                <button class="styled_button open-button">배경 마크 고르기</button>
+                <button class="styled_button" id="open-button_2">직인 고르기</button>
+            </div>
+            </br>
+            <hr style="width:100%;">
+            </br>
+            <div class = "fame_container">
+                <p>명예의 전당</p>
+                <a class="see_more" href="{% url 'home' %}">더보기</a>
+                <div class="fame_each"></div>
+            </div>
+
+            <div class="modal hidden" id="modal_1">
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="mark_div">
+                            <img class="mark_img" id="mark_1" src="data:image/png;base64,{{markImg1}}" onClick="onMarkChange(event)"/>
+                        </div>
+                        <div class="mark_div">
+                            <img class="mark_img" id="mark_2" src="data:image/png;base64,{{markImg2}}" onClick="onMarkChange(event)"/>
+                        </div>
+                        <div class="mark_div">
+                            <img class="mark_img" id="mark_3" src="data:image/png;base64,{{markImg3}}" onClick="onMarkChange(event)"/>
+                        </div>
+                        <div class="mark_div" id="add_mark">
+                            <label class="custom-input">
+                                <img class="custom-button" src="../static/images/add.png" />
+                                <input class="mark_img add_img" type="file" name="image" id="image-input" onChange="previewImage(event)" />
+                            </label>
+                        </div>
+                    <button class="close">❌</button>
+                    </div>
+                </div>
+                <div class="modal-overlay"></div>
+            </div>
+
+            <div class="modal hidden" id="modal_2">
+                <div class="modal-content">
+                    <div class="box">
+                        <div class="mark_div">
+                            <img class="mark_img" id="stamp_1" src="data:image/png;base64,{{stampImg1}}" onClick="onStampChange(event)"/>
+                        </div>
+                        <div class="mark_div">
+                            <img class="mark_img" id="stamp_2" src="data:image/png;base64,{{stampImg2}}" onClick="onStampChange(event)"/>
+                        </div>
+                        <div class="mark_div">
+                            <img class="mark_img" id="stamp_3" src="data:image/png;base64,{{stampImg3}}" onClick="onStampChange(event)"/>
+                        </div>
+                        <div class="mark_div" id="add_mark">
+                            <label class="custom-input">
+                                <img class="custom-button" src="../static/images/add.png" />
+                                <input class="mark_img add_img" type="file" name="image" id="image-input" onChange="previewImage_2(event)" />
+                            </label>
+                        </div>
+                    <button class="close">❌</button>
+                    </div>
+                </div>
+                <div class="modal-overlay"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const titleDiv = document.querySelector('.title_div')
+        const contentDiv = document.querySelector('.content_div')
+        const signDiv = document.querySelector('.sign_div')
+        
+        const titleInput = document.querySelector('.title')
+        const contentInput = document.querySelector('.content')
+        const signInput = document.querySelector('.sign')
+
+        titleInput.addEventListener('input', (e) => {
+            titleDiv.innerHTML = e.target.value;
+        })
+
+        contentInput.addEventListener('input', (e) => {
+            contentDiv.innerHTML = e.target.value;
+        })
+        
+        signInput.addEventListener('input', (e) => {
+            signDiv.innerHTML = e.target.value;
+        })
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById("image-preview");
+
+            if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = "block";
+            };
+
+            reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = "#";
+                preview.style.display = "none";
+            }
+        }
+        function previewImage_2(event) {
+    const input = event.target;
+    const previews = document.querySelectorAll(".image-preview_2");
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const src = e.target.result;
+            previews.forEach((preview) => {
+                preview.src = src;
+                preview.style.display = "block";
+            });
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        previews.forEach((preview) => {
+            preview.src = "";
+            preview.style.display = "none";
+        });
+    }
+}
+
+        const modal_1 = document.getElementById('modal_1')
+        const openBtn = document.querySelector(".open-button");
+        function openModal(e) {
+            modal_1.classList.remove("hidden");
+        }
+        openBtn.addEventListener("click", openModal);
+        const closeBtn = modal_1.querySelector(".close");
+        const overlay = modal_1.querySelector(".modal-overlay");
+        function closeModal() {
+            modal_1.classList.add("hidden");
+        }
+        closeBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+
+
+
+        const modal_2 = document.getElementById('modal_2')
+        const openBtn_2 = document.getElementById("open-button_2");
+        function openModal_2(e) {
+            modal_2.classList.remove("hidden");
+        }
+        openBtn_2.addEventListener("click", openModal_2);
+        const closeBtn_2 = modal_2.querySelector(".close");
+        const overlay_2 = modal_2.querySelector(".modal-overlay");
+        function closeModal_2() {
+            modal_2.classList.add("hidden");
+        }
+        closeBtn_2.addEventListener("click", closeModal_2);
+        overlay_2.addEventListener("click", closeModal_2);
+    
+    function saveImage() {
+      const container = document.getElementById("our_example");
+
+      html2canvas(container).then(function (canvas) {
+        const image = canvas.toDataURL(); // 스크린샷 이미지 데이터
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "fake_screenshot.png";
+        link.click();
+      });
+    }
+
+    const onMarkChange = (e) => {
+        const preview = document.getElementById("image-preview");
+        if (e.target.id === "mark_1")preview.src = "data:image/png;base64,{{markImg1}}"
+        else if (e.target.id === "mark_2") preview.src = "data:image/png;base64,{{markImg2}}"
+        else if (e.target.id === "mark_3") preview.src = "data:image/png;base64,{{markImg3}}"
+    }
+    const onStampChange = (e) => {
+        const previews = document.querySelectorAll(".image-preview_2");
+        if (e.target.id === "stamp_1"){
+            previews.forEach((preview) => {
+                preview.src = "data:image/png;base64,{{stampImg1}}";
+            });
+        } else if (e.target.id === "stamp_2"){
+            previews.forEach((preview) => {
+                preview.src = "data:image/png;base64,{{stampImg2}}";
+            });
+        } else if (e.target.id === "stamp_3"){
+            previews.forEach((preview) => {
+                preview.src = "data:image/png;base64,{{stampImg3}}";
+            });
+        }
+    }
+    </script>
+{% endblock %}

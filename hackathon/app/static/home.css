@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'DOSPilgiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'DOSPilgiMedium';
+}
+
+  .text-neon1 {
+    color: #fff;
+    text-shadow:
+      0 0 5px #320000,
+      0 0 10px #fff,
+      0 0 15px #5a0606,
+      0 0 20px #ff00de,
+      0 0 30px #cdf006,
+      0 0 40px #fff200,
+      0 0 55px #ff00de,
+      0 0 75px #eafa06;
+    
+  }
+
+  .pic {
+    width: 88%;
+    margin-left: 10px;
+    animation: neonBlink 1s infinite alternate;
+    border-radius: 30px;
+    border: 2px solid rgb(57, 57, 57);
+  }
+  
+  @keyframes neonBlink {
+    0% {
+      box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+
+
+  

@@ -21,13 +21,13 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    # path('', views.home, name='home'),
+    path('', views.home, name='home'),
 
-    # path('fake/', views.fake, name='fake'),
+    path('fake/', views.fake, name='fake'),
     # path('fake_detail/<int:fake_pk>', views.fake_detail, name='fake_detail'),
     # path('fake_list/', views.fake_list, name='fake_list'),
 
-    # path('diary/', views.diary, name='diary'),
+    path('diary/', views.diary, name='diary'),
     # path('diary_detail/<int:diary_pk>', views.diary_detail, name='diary_detail'),
     # path('diary_list/', views.diary_list, name='diary_list'),
 ]

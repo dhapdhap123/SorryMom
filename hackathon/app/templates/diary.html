@@ -1,0 +1,198 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'diary.css' %}" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+{% endblock %} {% block h1 %} 그 림 일 기 {% endblock %} {% block section %}
+<div id="diary-container">
+    <div id="date-container">
+        <div>
+            <span class="year">${year}</span>년 
+            <span class="month">${month}</span>월 
+            <span class="day">${day}</span>일 
+            <span class="weekday">${weekday}</span>요일
+        </div>
+        <span class="weather">맑음!</span>
+    </div>
+    <div class="img_cut"> 
+        <img
+        id="image-preview"
+        src="data:image/png;base64,{{image}}"
+        alt="Preview"
+        />
+    </div>
+    <div class="title_div">{{title}}</div>
+    <div class="manuscript-container">
+      <div class="manuscript">
+        <div id="displayArea" class="content-div">{{content}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="user_input">
+    <form id="diary-form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="downloadWrapper">
+            <button type="button" class="styled_button" onclick="saveImage()">저장</button>
+        </div>
+        <div class="date"></div>
+        <div class="title">
+        <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="제목을 입력해주세요"
+            value="{{title}}"
+        />
+        </div>
+        <div class="content">
+            <textarea
+                name="content"
+                id="myInput"
+                placeholder="내용을 입력해주세요"
+                oninput="displayInput()"
+            >{{content}}</textarea>
+        </div>
+        <div class="upload_img">
+        <input
+            type="file"
+            name="image"
+            id="image-input"
+            onchange="previewImage(event)"
+        />
+        </div>
+    </form>
+  </div>
+
+  <div class="fame_container">
+    <p>명예의 전당</p>
+    <a class="see_more" href="{% url 'home' %}">더보기</a>
+    <div class="fame_each"></div>
+  </div>
+  <script>
+    function dateControl() {
+    const yearContainer = document.querySelector(".year");
+    const monthContainer = document.querySelector(".month");
+    const dayContainer = document.querySelector(".day");
+    const weekdayContainer = document.querySelector(".weekday");
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const weekday = ["일", "월", "화", "수", "목", "금", "토"][today.getDay()];
+
+    yearContainer.innerText = year;
+    monthContainer.innerText = month;
+    dayContainer.innerText = day;
+    weekdayContainer.innerText = weekday;
+    }
+
+    dateControl();
+
+    const titleDiv = document.querySelector(".title_div");
+    const contentDiv = document.querySelector(".content_div");
+
+    const title = document.querySelector(".title");
+    const content = document.querySelector(".content");
+
+    title.addEventListener("input", (e) => {
+      const title = e.target.value;
+      titleDiv.innerHTML = title;
+    });
+    function displayInput() {
+      const inputText = document.getElementById("myInput").value;
+      document.getElementById("displayArea").innerText = inputText;
+      initManuscript();
+    }
+
+    function initManuscript() {
+      const manuscript = document.querySelectorAll(".manuscript");
+      const handleResize = () => {
+        manuscript.forEach((elt) => {
+        //   resizeMnuascriptContainer(elt);
+          resizeImage(elt);
+        });
+      };
+
+      window.addEventListener("load", handleResize, { passive: true });
+      window.addEventListener("resize", handleResize, { passive: true });
+
+      manuscript.forEach((element) => {
+        element.querySelectorAll("#displayArea").forEach((element) => {
+          const text = element.innerText;
+
+          element.innerHTML = "";
+          let lineCount = 0;
+          let charCount = 0;
+
+          [...text].forEach((word) => {
+            if (charCount >= 60 || lineCount >= 5) {
+              return;
+            }
+
+            const span = document.createElement("span");
+            const textNode = document.createTextNode(word);
+            if (word === " "){
+                span.setAttribute("class", "blank")
+            }
+            span.appendChild(textNode);
+            element.append(span);
+            
+            charCount++;
+
+            if (charCount % 12 === 0) {
+              element.appendChild(document.createElement("br"));
+              lineCount++;
+            }
+          });
+        });
+      });
+
+      handleResize();
+    }
+
+    function resizeImage(element) {
+      element.querySelectorAll("img").forEach((img) => {
+        const { naturalWidth, naturalHeight } = img;
+        const ratio = naturalHeight / naturalWidth;
+        const newHeight = element.offsetWidth * ratio;
+
+        img.height = Math.floor(newHeight - (newHeight % 32) - 8);
+      });
+    }
+
+    initManuscript();
+    
+    function previewImage(event) {
+      const input = event.target;
+      const preview = document.getElementById("image-preview");
+
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        preview.src = "#";
+        preview.style.display = "none";
+      }
+    }
+    function saveImage() {
+      const container = document.getElementById("diary-container");
+
+      html2canvas(container).then(function (canvas) {
+        const image = canvas.toDataURL(); // 스크린샷 이미지 데이터
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "diary_screenshot.png";
+        link.click();
+      });
+    }
+   
+  </script>
+  {% endblock %}
+</div>
