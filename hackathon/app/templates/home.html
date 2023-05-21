@@ -4,151 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>랜딩 페이지</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
   </head>
   <body>
-    <id="container">
       <h1 class="text-neon1 wave-text">차린건 없지만~</h1>
       <img class="a" src="../static/images/landingPage/8.png" />
       <img class="arrow" src="../static/images/landingPage/3.png" />
       <span>구라증과 그림일기~</span>
-<br>
+      <br>
       <div class="box">
         <div class="image-container">
         <a href="{% url 'fake' %}"
-          ><img class="pic1" src="../static/images/landingPage/a.png"
+          ><img class="pic" src="../static/images/landingPage/a.png"
         /></a>
         </div>
 
         <div class="image-container">
         <a href="{% url 'diary' %}"
-          ><img class="pic2" src="../static/images/landingPage/b.png"
+          ><img class="pic" src="../static/images/landingPage/b.png"
         /></a>
       </div>
       </div>
 
-    
-
-      <img class="arrow1 text-neon" src="../static/images/landingPage/6.png" />
+        <img class="arrow1 text-neon" src="../static/images/landingPage/6.png" />
       <img class="arrow1 text-neon" src="../static/images/landingPage/5.png" />
 
       <p class="text-neon">클릭하쉴?</p>
-    </div>
-    <style>
-
-      span{
-        font-family: "UhBeeJJIBBABBA";
-        font-size: 30px;
-        margin-left: 20% ;
-        margin-bottom: 10% ;
-      
-      }
-      .a {
-        position: absolute;
-        top: 60px;
-        z-index: -2;
-        width: 250px;
-      }
-
-      body {
-        background-image: repeating-linear-gradient(
-          rgb(218, 29, 29),
-          rgb(247, 160, 0),
-          yellow,
-          green,
-          blue,
-          indigo,
-          purple
-        );
-        max-width: 430px;
-      }
-
-      h1 {
-        text-align: center;
-        font-family: "UhBeeJJIBBABBA";
-        margin-top: 20%;
-        margin-bottom: 5px;
-
-        font-size: 50px;
-        font-weight: bold;
-      }
-
-      .box {
-        display: flex;
-
-        justify-content: center;
-        
-      }
-
-      p {
-        font-family: "UhBeeJJIBBABBA";
-        font-size: 60px;
-        margin-left: 20%;
-        margin-top: 50px;
-        font-weight: 800;
-        line-height: 1.5;
-        color: rgb(255, 101, 232);
-      }
-
-      .bo {
-        width: 120px;
-      }
-
-      .arrow {
-        width: 150px;
-        margin-left: 250px;
-      }
-
-      .arrow1 {
-        width: 150px;
-        margin-top: 20px;
-        margin-left: 30px;
-      }
-
-      @font-face {
-        font-family: "UhBeeJJIBBABBA";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
-          format("woff");
-        font-weight: normal;
-        font-style: normal;
-      }
-
-      * {
-        font-family: "UhBeeJJIBBABBA";
-      }
-
-      .text-neon1 {
-        color: #fff;
-        text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
-          0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
-          0 0 75px #eafa06;
-      }
-
-      .pic1 {
-        width:150%;
-        height: 100%;
-        margin-left: 10px;
-        animation: neonBlink 1s infinite alternate;
-        border-radius: 30px;
-        border: 2px solid rgb(57, 57, 57);
-      }
-
-      .pic2 {
-        width: 62%;
-        height: 100%;
-        margin-left: 35%;
-        animation: neonBlink 1s infinite alternate;
-        border-radius: 30px;
-        border: 2px solid rgb(57, 57, 57);
-      }
-
-      @keyframes neonBlink {
-        0% {
-          box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
-        }
-        100% {
-          box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
-        }
-      }
-    </style>
   </body>
 </html>

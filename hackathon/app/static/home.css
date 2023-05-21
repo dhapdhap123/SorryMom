@@ -1,36 +1,97 @@
-@font-face {
-    font-family: 'DOSPilgiMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+.image-container{
+    width: 40%;
+  }
+
+  span{
+    font-family: "UhBeeJJIBBABBA";
+    font-size: 30px;
+    margin-left: 20% ;
+    margin-bottom: 10% ;
+  
+  }
+  .a {
+    position: absolute;
+    top: 60px;
+    z-index: -2;
+    width: 100%;
+  }
+
+  body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fffcf2;
+    max-width: 430px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: "UhBeeJJIBBABBA";
+    margin-top: 20%;
+    margin-bottom: 5px;
+
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  p {
+    font-family: "UhBeeJJIBBABBA";
+    font-size: 60px;
+    margin-left: 20%;
+    margin-top: 50px;
+    font-weight: 800;
+    line-height: 1.5;
+    color: rgb(255, 101, 232);
+  }
+
+  .bo {
+    width: 120px;
+  }
+
+  .arrow {
+    width: 150px;
+    margin-left: 250px;
+  }
+
+  .arrow1 {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  @font-face {
+    font-family: "UhBeeJJIBBABBA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+      format("woff");
     font-weight: normal;
     font-style: normal;
-}
+  }
 
-*{
-    font-family: 'DOSPilgiMedium';
-}
+  * {
+    font-family: "UhBeeJJIBBABBA";
+  }
 
   .text-neon1 {
     color: #fff;
-    text-shadow:
-      0 0 5px #320000,
-      0 0 10px #fff,
-      0 0 15px #5a0606,
-      0 0 20px #ff00de,
-      0 0 30px #cdf006,
-      0 0 40px #fff200,
-      0 0 55px #ff00de,
+    text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
+      0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
       0 0 75px #eafa06;
-    
   }
 
   .pic {
-    width: 88%;
-    margin-left: 10px;
+    width: 100%;
+    height: 100%;
     animation: neonBlink 1s infinite alternate;
     border-radius: 30px;
     border: 2px solid rgb(57, 57, 57);
   }
-  
+
   @keyframes neonBlink {
     0% {
       box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
@@ -39,7 +100,4 @@
       box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
     }
   }
-  
-
-
   
