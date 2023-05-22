@@ -37,82 +37,75 @@ input{
 .container {
     width: 100%;
     margin: 0 auto;
-  }
-  
- .child {
-    position: relative;
-  }
-  
-  .stamp_container_div{
-    position: absolute;
-    top: 20px;
-    left: 170px;
-  }
+}
 
-  .stamp_div_1 {
-    position: absolute;
-    top: 53px;
-    left: 185px;
-  }
-  
-  .stamp_div_2 {
-    position: absolute;
-    top: 230px;
-    left: 150px;
-  }
-  
-  .content_div {
-    position: relative;
-    bottom: 230px;
-    padding: 0 7.5%;
-    line-height: 35px;
-  }
-  
-  .background_div {
-    position: absolute;
-    top: 100px;
-  }
-  
-  .bck_img {
-    opacity: 0.2;
-  }
-  
-  .sign_div {
-    position: absolute;
-    bottom: 30px;
-  }
-  
-  .our_example {
-    display: grid;
-    width: 225px;
-    /* height: auto; */
-    height: 300px;
-    border: 1px solid rgb(87, 87, 87);
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    text-align: center;
-    place-items: center;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  .user_input {
-    position: relative;
-    margin: 3% auto;
-    text-align: center;
-  }
+.child {
+  position: relative;
+}
 
-  .upload_img {
-    position: relative;
-    top:20px;
-  }
+.stamp_container_div{
+  position: absolute;
+  top: 20px;
+  left: 170px;
+}
 
-  .downloadWrapper{
-    margin: 1% 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
+.stamp_div_1 {
+  position: absolute;
+  top: 53px;
+  left: 185px;
+}
+
+.stamp_div_2 {
+  position: absolute;
+  top: 230px;
+  left: 150px;
+}
+
+.content_div {
+  position: relative;
+  bottom: 230px;
+  padding: 0 7.5%;
+  line-height: 35px;
+}
+
+.background_div {
+  position: absolute;
+  top: 100px;
+}
+
+.bck_img {
+  opacity: 0.2;
+}
+
+.sign_div {
+  position: absolute;
+  bottom: 30px;
+}
+
+.our_example {
+  display: grid;
+  width: 225px;
+  /* height: auto; */
+  height: 300px;
+  border: 1px solid rgb(87, 87, 87);
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  text-align: center;
+  place-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.user_input {
+  position: relative;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.upload_img {
+  position: relative;
+  top:20px;
+}
   
 .input_left{
   width: 20%;
@@ -248,12 +241,29 @@ i {
     position: absolute;
     opacity:0.5;
 }
-#stamp_1{
+#upper_stamp_1{
   position: relative;
   top: -20px;
   left: 3px;
 }
-#stamp_2{
+#upper_stamp_2{
   position: relative;
   left: 5px;
+}
+.downloadWrapper{
+  margin: 1% 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.upload{
+  margin-left: 3%;
+}
+.download{
+  background-color: rgb(209, 140, 236);
+  width: 225px;
+  padding: 1% 0 0 0;
+}
+.download_icon{
+  width: 15%;
 }

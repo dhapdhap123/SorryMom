@@ -23,20 +23,33 @@ body {
     background-color: #fffcf2;
     margin: 0 auto; 
 }
+header {
+  padding: 3% 0;
+  width: 88%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_left{
+width: 20%;
+}
+.header_center{
+width: 60%;
+text-align: center;
+}
+.header_right{
+width: 20%;
+}
+
+.logo{
+  width: 70%;
+}
 
 button,
 input {
   font-family: "UhBeeJJIBBABBA";
-}
-header {
-    width: 88%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-  
+}  
 section{
     width: 88%;
     height: 83%;

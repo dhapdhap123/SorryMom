@@ -112,36 +112,38 @@ const previewImage = (event) => {
 };
 
 // 이미지 다운로드 및 axios.post 요청 함수
-const saveImage = async () => {
+const downloadImage = async () => {
   const container = document.getElementById("diary-container");
+  const canvas = await html2canvas(container); // html2canvas 함수를 await로 호출하여 canvas를 얻음
+  const image = canvas.toDataURL(); // 스크린샷 이미지 데이터를 image 변수에 할당
 
-  const titleInput = document.querySelector("#title");
-  const contentInput = document.querySelector("#myInput");
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "diary_screenshot.png";
+  link.click();
+};
 
-  let image; // image 변수를 함수 스코프에 선언
+// axios.post 요청 함수(로그인 시)
+const uploadImage = async () => {
+  alert("로그인, 업로드 기능은 구현예정입니다.");
+  // try {
+  //   const container = document.getElementById("our_example");
+  //   const canvas = await html2canvas(container); // html2canvas 함수를 await로 호출하여 canvas를 얻음
+  //   image = canvas.toDataURL(); // 스크린샷 이미지 데이터를 image 변수에 할당
 
-  try {
-    const canvas = await html2canvas(container); // html2canvas 함수를 await로 호출하여 canvas를 얻음
-    image = canvas.toDataURL(); // 스크린샷 이미지 데이터를 image 변수에 할당
+  //   const startIndex = image.indexOf(",") + 1;
+  //   const trimmedString = image.substring(startIndex);
 
-    const link = document.createElement("a");
-    link.href = image;
-    link.download = "diary_screenshot.png";
-    link.click();
-
-    const base64String = image;
-    const startIndex = base64String.indexOf(",") + 1;
-    const trimmedString = base64String.substring(startIndex);
-
-    const res = await axios.post("/create_diary/", {
-      title: titleInput.value == undefined ? "" : titleInput.value,
-      content: contentInput.value == undefined ? "" : contentInput.value,
-      img: trimmedString,
-    });
-    console.log(res);
-  } catch (e) {
-    console.error(e);
-  }
+  //   const res = await axios.post("/create_fake/", {
+  //     title: titleInput.value == undefined ? "" : titleInput.value,
+  //     content: contentInput.value == undefined ? "" : contentInput.value,
+  //     sign: signInput.value == undefined ? "" : signInput.value,
+  //     img: trimmedString,
+  //   });
+  //   console.log(res);
+  // } catch (e) {
+  //   console.log(e);
+  // }
 };
 
 // render시 함수 실행
