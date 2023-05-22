@@ -1,103 +1,110 @@
-.image-container{
-    width: 40%;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fffcf2;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: auto;
+  text-align: center;
+}
 
-  span{
-    font-family: "UhBeeJJIBBABBA";
-    font-size: 30px;
-    margin-left: 20% ;
-    margin-bottom: 10% ;
-  
-  }
-  .a {
-    position: absolute;
-    top: 60px;
-    z-index: -2;
-    width: 100%;
-  }
+section {
+  flex-grow: 1;
+}
 
-  body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #fffcf2;
-    max-width: 430px;
-    margin: auto;
-  }
+.main {
+  padding: 3% 0;
+  text-align: center;
+  font-family: "UhBeeJJIBBABBA";
 
-  h1 {
-    text-align: center;
-    font-family: "UhBeeJJIBBABBA";
-    margin-top: 20%;
-    margin-bottom: 5px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.arrow {
+  width: 50px;
+  margin: 0 3% 3% 0;
+}
 
-    font-size: 50px;
-    font-weight: bold;
-  }
+.title {
+  position: relative;
+  font-family: "UhBeeJJIBBABBA";
+  font-size: 1.5rem;
+}
 
-  .box {
-    display: flex;
-    justify-content: space-around;
-  }
+.box {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
 
-  p {
-    font-family: "UhBeeJJIBBABBA";
-    font-size: 60px;
-    margin-left: 20%;
-    margin-top: 50px;
-    font-weight: 800;
-    line-height: 1.5;
-    color: rgb(255, 101, 232);
-  }
+.image-container {
+  width: 40%;
+}
 
-  .bo {
-    width: 120px;
-  }
+.arrow_container {
+  display: flex;
+  position: relative;
+}
+#arrow_1 {
+  justify-content: flex-end;
+}
+#arrow_2 {
+  justify-content: flex-start;
+}
+.pic {
+  width: 100%;
+  height: 100%;
+  animation: neonBlink 1s infinite alternate;
+  border-radius: 30px;
+  border: 2px solid rgb(57, 57, 57);
+}
 
-  .arrow {
-    width: 150px;
-    margin-left: 250px;
+@keyframes neonBlink {
+  0% {
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
   }
+  100% {
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
+  }
+}
 
-  .arrow1 {
-    width: 150px;
-    margin-top: 20px;
-    margin-left: 30px;
-  }
+.click {
+  font-family: "UhBeeJJIBBABBA";
+  font-size: 30px;
+  font-weight: 800;
+  color: rgb(255, 101, 232);
+  margin: 0;
+}
 
-  @font-face {
-    font-family: "UhBeeJJIBBABBA";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+.arrow1 {
+  width: 50px;
+  top: 80%;
+  left: 5%;
+  margin: 3% 0 0 3%;
+}
 
-  * {
-    font-family: "UhBeeJJIBBABBA";
-  }
+@font-face {
+  font-family: "UhBeeJJIBBABBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .text-neon1 {
-    color: #fff;
-    text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
-      0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
-      0 0 75px #eafa06;
-  }
+* {
+  font-family: "UhBeeJJIBBABBA";
+}
 
-  .pic {
-    width: 100%;
-    height: 100%;
-    animation: neonBlink 1s infinite alternate;
-    border-radius: 30px;
-    border: 2px solid rgb(57, 57, 57);
-  }
-
-  @keyframes neonBlink {
-    0% {
-      box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
-    }
-    100% {
-      box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
-    }
-  }
-  
+.text-neon1 {
+  color: #fff;
+  text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
+    0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
+    0 0 75px #eafa06;
+}
+footer {
+  height: 5%;
+}
+p {
+  text-align: center;
+}
