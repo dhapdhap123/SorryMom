@@ -30,6 +30,7 @@ def fake (request) :
     sign = first_fake[0].sign
     img = first_fake[0].base_img
     # fames = Fake
+    print(markImg1, markImg2, markImg3)
 
     return render(request, 'fake.html', {'title': title, 'content': content, 'sign': sign, 'img':img, 'markImg1': markImg1, 'markImg2': markImg2, 'markImg3': markImg3, 'stampImg1': stampImg1, 'stampImg2': stampImg2, 'stampImg3': stampImg3})
 
