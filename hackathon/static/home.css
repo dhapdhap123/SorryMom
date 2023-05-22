@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fffcf2;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: auto;
+  text-align: center;
+}
+
+header {
+  padding: 5% 0;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_left{
+width: 20%;
+}
+.header_center{
+width: 60%;
+text-align: center;
+}
+.header_right{
+width: 20%;
+}
+
+.logo{
+  width: 70%;
+}
+
+section {
+  flex-grow: 1;
+}
+
+.main {
+  text-align: center;
+  font-family: "UhBeeJJIBBABBA";
+  font-size: 50px;
+  font-weight: bold;
+}
+.arrow {
+  width: 50px;
+  margin: 0 3% 3% 0;
+}
+
+.title {
+  position: relative;
+  font-family: "UhBeeJJIBBABBA";
+  font-size: 1.5rem;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.image-container {
+  width: 40%;
+}
+
+.arrow_container {
+  display: flex;
+  position: relative;
+}
+#arrow_1 {
+  justify-content: flex-end;
+}
+#arrow_2 {
+  justify-content: flex-start;
+}
+.pic {
+  width: 100%;
+  height: 100%;
+  animation: neonBlink 1s infinite alternate;
+  border-radius: 30px;
+  border: 2px solid rgb(57, 57, 57);
+}
+
+@keyframes neonBlink {
+  0% {
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.click {
+  font-family: "UhBeeJJIBBABBA";
+  font-size: 30px;
+  font-weight: 800;
+  color: rgb(255, 101, 232);
+  margin: 0;
+}
+
+.arrow1 {
+  width: 50px;
+  top: 80%;
+  left: 5%;
+  margin: 3% 0 0 3%;
+}
+
+@font-face {
+  font-family: "UhBeeJJIBBABBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "UhBeeJJIBBABBA";
+}
+
+.text-neon1 {
+  color: #fff;
+  text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
+    0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
+    0 0 75px #eafa06;
+}
+footer {
+  height: 5%;
+}
+p {
+  text-align: center;
+}

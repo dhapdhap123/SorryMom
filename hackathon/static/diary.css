@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "UhBeeRami";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeRami.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  font-family: "UhBeeRami";
+}
+
+:root {
+  --bg-color: #fff;
+  --bg-transparent: rgba(255, 255, 255, 0);
+  --border-color: #d38686;
+}
+
+body {
+  text-align: center;
+  align-items: center;
+}
+
+.title_div {
+  font-weight: bold;
+}
+
+#diary-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  border: solid 0.5px black;
+  overflow: hidden;
+}
+
+.manuscript-container {
+  margin: 0 auto;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+.manuscript {
+  display: inline-block;
+  width: 300px; /* 가로 10칸(24px * 10) */
+  height: 140px; /* 세로 5칸(32px * 5) */
+  border: 1px solid black;
+  padding: 8px;
+  margin: 10px;
+  font-size: 16px;
+  line-height: 32px;
+  padding: 8px 0;
+  border: 2px solid var(--border-color);
+  background: -webkit-linear-gradient(
+      top,
+      var(--bg-transparent) 0%,
+      var(--bg-transparent) 1px,
+      var(--bg-color) 1px,
+      var(--bg-color) 8px,
+      var(--bg-transparent) 8px,
+      var(--bg-transparent) 100%
+    ),
+    -webkit-linear-gradient(top, var(--bg-transparent) 0%, var(--bg-transparent)
+          1px, var(--bg-color) 1px, var(--bg-color) 8px, var(--bg-transparent)
+          8px, var(--bg-transparent) 100%),
+    -webkit-linear-gradient(left, var(--border-color) 0%, var(--border-color)
+          1px, var(--bg-transparent) 1px, var(--bg-transparent) 100%),
+    -webkit-linear-gradient(top, var(--border-color) 0%, var(--border-color) 1px, var(
+            --bg-transparent
+          )
+          1px, var(--bg-transparent) 100%),
+    -webkit-linear-gradient(top, var(--border-color) 0%, var(--border-color) 1px, var(
+            --bg-transparent
+          )
+          1px, var(--bg-transparent) 100%),
+    var(--bg-color);
+  background: linear-gradient(
+      to bottom,
+      var(--bg-transparent) 0%,
+      var(--bg-transparent) 1px,
+      var(--bg-color) 1px,
+      var(--bg-color) 8px,
+      var(--bg-transparent) 8px,
+      var(--bg-transparent) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--bg-transparent) 0%,
+      var(--bg-transparent) 1px,
+      var(--bg-color) 1px,
+      var(--bg-color) 8px,
+      var(--bg-transparent) 8px,
+      var(--bg-transparent) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--border-color) 0%,
+      var(--border-color) 1px,
+      var(--bg-transparent) 1px,
+      var(--bg-transparent) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--border-color) 0%,
+      var(--border-color) 1px,
+      var(--bg-transparent) 1px,
+      var(--bg-transparent) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--border-color) 0%,
+      var(--border-color) 1px,
+      var(--bg-transparent) 1px,
+      var(--bg-transparent) 100%
+    ),
+    var(--bg-color);
+  background-size: 24px 32px;
+  margin: 0 auto;
+  background-position: 0 -1px, 0 0, -1px 0, 0 8px, 0px -1px;
+}
+
+.manuscript > #displayArea {
+  /* display: flex; */
+  display: block;
+  text-align: left;
+  /* flex-wrap: wrap; */
+  /* display: block; */
+  margin: -8px -4px 8px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.manuscript > #displayArea > span {
+  display: inline-block;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  /* flex-shrink: 0; */
+  margin-top: 8px;
+}
+.manuscript > #displayArea > .blank {
+  display: inline-block;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  /* flex-shrink: 0; */
+  margin-top: 0;
+}
+
+.manuscript > :empty:not(img) {
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.manuscript > :last-child {
+  margin-bottom: 0;
+}
+
+.manuscript > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+
+.input_div{
+  display: flex;
+  margin-bottom: 2%;
+}
+.input_left{
+  width: 20%;
+}
+.input_center{
+  width: 60%;
+}
+.input_right{
+  width: 20%;
+}
+.user_input {
+  position: relative;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.upload_img {
+  max-width: 344px;
+  max-height: 258px;
+  overflow: hidden;
+}
+#image-preview {
+  width: 100%;
+  object-fit: cover;
+}
+
+.styled_button {
+  display: inline-block;
+  border: 0.5px solid rgba(195, 195, 195, 0.599);
+  border-radius: 15px;
+  padding: 10px 15px;
+  box-shadow: 0 15px 35px rgba(244, 244, 244, 0.73);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: #c2e3e3;
+  color: #519d9e;
+}
+
+.year,
+.month,
+.weekday,
+.day {
+  font-size: 22px;
+}
+.weather {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#date-container {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+textarea{
+  resize: none;
+  padding: 1%;
+}
+input{
+  padding: 1%;
+}
+
+.hidden{
+  display: none;
+}
+.downloadWrapper{
+  margin: 1% 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.upload{
+  margin-left: 3%;
+}
+.download{
+  background-color: rgb(209, 140, 236);
+  width: 225px;
+  padding: 1% 0 0 0;
+}
+.download_icon{
+  width: 15%;
+}
