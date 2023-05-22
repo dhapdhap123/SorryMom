@@ -45,8 +45,8 @@ input{
   
   .stamp_container_div{
     position: absolute;
-    top: 50px;
-    left: 185px;
+    top: 20px;
+    left: 170px;
   }
 
   .stamp_div_1 {
@@ -247,8 +247,14 @@ i {
   
 .image-preview_2{
     position: absolute;
-    margin-left:20px;
-    margin-top:10px;
-    opacity:0.7;
-
+    opacity:0.5;
+}
+#stamp_1{
+  position: relative;
+  top: -20px;
+  left: 3px;
+}
+#stamp_2{
+  position: relative;
+  left: 5px;
 }
