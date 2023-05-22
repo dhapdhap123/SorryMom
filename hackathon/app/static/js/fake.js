@@ -93,29 +93,21 @@ overlay_2.addEventListener("click", closeModal_2);
 // 마크 예시(고대, 연대, nct마크) 적용 함수
 const onMarkChange = (e) => {
   const preview = document.getElementById("image-preview");
-  if (e.target.id === "mark_1")
-    preview.src = "data:image/png;base64,{{markImg1}}";
-  else if (e.target.id === "mark_2")
-    preview.src = "data:image/png;base64,{{markImg2}}";
-  else if (e.target.id === "mark_3")
-    preview.src = "data:image/png;base64,{{markImg3}}";
+  const img = e.target.src;
+  const startIndex = img.indexOf(",") + 1;
+  const trimmedString = img.substring(startIndex);
+  preview.src = `data:image/png;base64,${trimmedString}`;
 };
 // 직인 예시(고대, 연대, 보스) 적용 함수
 const onStampChange = (e) => {
   const previews = document.querySelectorAll(".image-preview_2");
-  if (e.target.id === "stamp_1") {
-    previews.forEach((preview) => {
-      preview.src = "data:image/png;base64,{{stampImg1}}";
-    });
-  } else if (e.target.id === "stamp_2") {
-    previews.forEach((preview) => {
-      preview.src = "data:image/png;base64,{{stampImg2}}";
-    });
-  } else if (e.target.id === "stamp_3") {
-    previews.forEach((preview) => {
-      preview.src = "data:image/png;base64,{{stampImg3}}";
-    });
-  }
+  const img = e.target.src;
+  const startIndex = img.indexOf(",") + 1;
+  const trimmedString = img.substring(startIndex);
+
+  previews.forEach((preview) => {
+    preview.src = `data:image/png;base64,${trimmedString}`;
+  });
 };
 
 // 이미지 다운로드
@@ -149,8 +141,8 @@ const uploadImage = async () => {
   //     sign: signInput.value == undefined ? "" : signInput.value,
   //     img: trimmedString,
   //   });
-  //   console.log(res);
+  //
   // } catch (e) {
-  //   console.log(e);
+  //
   // }
 };
