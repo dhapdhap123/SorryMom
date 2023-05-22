@@ -19,20 +19,23 @@
                     <img src="../static/images/stampbox.png" height="30px" width="30px">
                 </div>
                 <div class="stamp_div_1">
-                    <img id="stamp_1" class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="15px" width="15px">
+                    <img id="upper_stamp_1" class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="15px" width="15px">
                 </div>
                 <div class="content_div">{{content}}</div>
                 <div class="background_div">
                     <img id="image-preview" src="data:image/png;base64,{{markImg1}}" alt="Preview" class="bck_img" height="130px" width="130px"/>
                 </div>
                 <div class="sign_div">{{sign}}</div>
-                <div class="stamp_div_2">
+                <div class="upper_stamp_div_2">
                     <img id="stamp_2" class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="50px" width="50px">
                 </div>    
             </div>
 
             <div class="downloadWrapper">
-                <button class="styled_button download" type="button" onclick="saveImage()">저장</button>
+                <button class="styled_button download" type="button" onclick="downloadImage()">
+                    <img class="download_icon" src="../static/images/download.png" />
+                </button>
+                <button class="styled_button upload hidden" type="button" onclick="uploadImage()">업로드</button>
             </div>
             <hr style="width: 100%;">
             <div class="user_input">
