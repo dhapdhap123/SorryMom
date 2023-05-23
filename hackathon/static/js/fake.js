@@ -30,6 +30,7 @@ const previewImage = (event) => {
     reader.onload = function (e) {
       preview.src = e.target.result;
       preview.style.display = "block";
+      closeModal();
     };
 
     reader.readAsDataURL(input.files[0]);
@@ -54,6 +55,7 @@ const previewImage_2 = (event) => {
     };
 
     reader.readAsDataURL(input.files[0]);
+    closeModal_2();
   } else {
     previews.forEach((preview) => {
       preview.src = "";
@@ -97,7 +99,7 @@ const onMarkChange = (e) => {
   const startIndex = img.indexOf(",") + 1;
   const trimmedString = img.substring(startIndex);
   preview.src = `data:image/png;base64,${trimmedString}`;
-  closeModal_1();
+  closeModal();
 };
 // 직인 예시(고대, 연대, 보스) 적용 함수
 const onStampChange = (e) => {
