@@ -1,51 +1,49 @@
 @font-face {
-  font-family: "UhBeeKang-Ja";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeKang-Ja.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "UhBeeJJIBBABBA";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+*{
+    font-family: 'UhBeeJJIBBABBA';
 }
 
-/* *{
-    font-family: 'UhBeeKang-Ja';
-} */
-
-.layer {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.layer{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.title,
-.content,
-.sign {
+.title, .content, .sign{
   display: flex;
   justify-content: center;
 }
-textarea {
+textarea{
   resize: none;
   padding: 1%;
 }
-input {
+input{
   padding: 1%;
 }
 
-.title_div {
-  font-size: 1.15em;
-  font-weight: bold;
-  position: relative;
-  bottom: 250px;
+.title_div{
+    font-size: 1.15em;
+    font-weight:bold;
+    position: relative;
+    bottom: 250px;
 }
 .container {
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .child {
   position: relative;
 }
 
-.stamp_container_div {
+.stamp_container_div{
   position: absolute;
   top: 20px;
   left: 170px;
@@ -106,28 +104,28 @@ input {
 
 .upload_img {
   position: relative;
-  top: 20px;
+  top:20px;
 }
-
-.input_left {
+  
+.input_left{
   width: 20%;
 }
-.input_center {
+.input_center{
   width: 60%;
 }
-.input_right {
+.input_right{
   width: 20%;
 }
-.input_div {
+.input_div{
   margin-bottom: 2%;
 }
 
 .fame_container {
-  display: flex;
-  justify-content: center;
+    display:flex;
+    justify-content:center;
 }
 
-.styled_button {
+.styled_button{
   display: inline-block;
   border: 0.5px solid rgba(195, 195, 195, 0.599);
   border-radius: 15px;
@@ -141,130 +139,129 @@ input {
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+  
 .modal-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
-
+  
 .modal-content {
-  position: relative;
-  background-color: white;
-  width: 80%;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-  padding: 5% 0;
+    position: relative;
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    padding: 5% 0;
 }
 
 .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  border: white;
-  background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: white;
+    background-color: white;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .box {
-  width: 100%;
-  height: 100%;
-  padding: 5% 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 5% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 i {
-  width: 50px;
-  height: 50px;
-  margin-top: 40px;
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
-.open-button {
-  cursor: pointer;
+.open-button{
+    cursor: pointer;
 }
 
-.mark_div {
-  width: 20%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mark_div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.mark_img,
-.mark_img_ {
-  width: 100%;
-  height: 30%;
+.mark_img{
+    width: 100%;
+    height: 30%;
 }
 
-.add_img {
-  cursor: pointer;
-  width: 100%;
+.add_img{
+    cursor: pointer;
+    width: 100%;
 }
 .custom-input {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
-
+  
 .custom-button {
-  display: inline-block;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 5px 5px 5px 5px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 5px;
 }
-
-.mark_img_.add_img {
-  /* 기존 input 스타일 */
-  display: none;
+  
+.mark_img.add_img {
+    /* 기존 input 스타일 */
+    display: none;
 }
-
-.image-preview_2 {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  opacity: 0.5;
+  
+.image-preview_2{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity:0.5;
 }
-#upper_stamp_1 {
+#upper_stamp_1{
   position: relative;
   top: -20px;
   left: 3px;
 }
-.downloadWrapper {
+.downloadWrapper{
   margin: 1% 0;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.upload {
+.upload{
   margin-left: 3%;
 }
-.download {
+.download{
   background-color: rgb(209, 140, 236);
   width: 225px;
   padding: 1% 0 0 0;
 }
-.download_icon {
+.download_icon{
   width: 15%;
 }

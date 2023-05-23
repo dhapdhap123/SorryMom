@@ -1,9 +1,13 @@
 @font-face {
+    font-family: "UhBeeRami";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeRami.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
   font-family: "UhBeeRami";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeRami.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
 
 :root {
@@ -21,14 +25,7 @@ body {
   font-weight: bold;
 }
 
-input {
-  font-family: "UhBeeRami";
-}
-textarea {
-  font-family: "UhBeeRami";
-}
 #diary-container {
-  font-family: "UhBeeRami";
   width: 100%;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
@@ -43,7 +40,6 @@ textarea {
 }
 
 .manuscript {
-  font-family: "UhBeeRami";
   display: inline-block;
   width: 300px; /* 가로 10칸(24px * 10) */
   height: 140px; /* 세로 5칸(32px * 5) */
@@ -140,7 +136,6 @@ textarea {
   height: 24px;
   /* flex-shrink: 0; */
   margin-top: 8px;
-  font-family: "UhBeeRami";
 }
 .manuscript > #displayArea > .blank {
   display: inline-block;
@@ -164,17 +159,18 @@ textarea {
   margin-bottom: 40px;
 }
 
-.input_div {
+
+.input_div{
   display: flex;
   margin-bottom: 2%;
 }
-.input_left {
+.input_left{
   width: 20%;
 }
-.input_center {
+.input_center{
   width: 60%;
 }
-.input_right {
+.input_right{
   width: 20%;
 }
 .user_input {
@@ -225,31 +221,31 @@ textarea {
   margin-right: 2%;
 }
 
-textarea {
+textarea{
   resize: none;
   padding: 1%;
 }
-input {
+input{
   padding: 1%;
 }
 
-.hidden {
+.hidden{
   display: none;
 }
-.downloadWrapper {
+.downloadWrapper{
   margin: 1% 0;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.upload {
+.upload{
   margin-left: 3%;
 }
-.download {
+.download{
   background-color: rgb(209, 140, 236);
   width: 225px;
   padding: 1% 0 0 0;
 }
-.download_icon {
+.download_icon{
   width: 15%;
 }

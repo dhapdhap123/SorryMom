@@ -70,18 +70,11 @@ function openModal(e) {
 openBtn.addEventListener("click", openModal);
 const closeBtn = modal_1.querySelector(".close");
 const overlay = modal_1.querySelector(".modal-overlay");
-const backMarkclose1 = document.getElementById("mark_1");
-const backMarkclose2 = document.getElementById("mark_2");
-const backMarkclose3 = document.getElementById("mark_3");
-
 function closeModal() {
   modal_1.classList.add("hidden");
 }
 closeBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
-backMarkclose1.addEventListener("click", closeModal);
-backMarkclose2.addEventListener("click", closeModal);
-backMarkclose3.addEventListener("click", closeModal);
 
 const modal_2 = document.getElementById("modal_2");
 const openBtn_2 = document.getElementById("open-button_2");
@@ -91,18 +84,11 @@ function openModal_2(e) {
 openBtn_2.addEventListener("click", openModal_2);
 const closeBtn_2 = modal_2.querySelector(".close");
 const overlay_2 = modal_2.querySelector(".modal-overlay");
-const stampclose1 = document.getElementById("stamp_1");
-const stampclose2 = document.getElementById("stamp_2");
-const stampclose3 = document.getElementById("stamp_3");
-
 function closeModal_2() {
   modal_2.classList.add("hidden");
 }
 closeBtn_2.addEventListener("click", closeModal_2);
 overlay_2.addEventListener("click", closeModal_2);
-stampclose1.addEventListener("click", closeModal_2);
-stampclose2.addEventListener("click", closeModal_2);
-stampclose3.addEventListener("click", closeModal_2);
 
 // 마크 예시(고대, 연대, nct마크) 적용 함수
 const onMarkChange = (e) => {

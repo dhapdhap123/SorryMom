@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -24,12 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@g&x&89irj$c%f8um2qe21$u6(7ind+4j#m3(5k)o_lwu5a%ay'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#로컬에서 돌릴땐 이거 키고
-# DEBUG = True
-
-#사이트 운영할 땐 이 밑에 꺼 두 줄 키기
 DEBUG = False
-ALLOWED_HOSTS = ['http://sonyewon.pythonanywhere.com/']
+
+ALLOWED_HOSTS = ['sonyewon.pythonanywhere.com']
 
 STATIC_URL = 'static/'
 
@@ -68,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'hackathon.urls'
