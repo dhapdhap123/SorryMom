@@ -6,9 +6,6 @@
     font-style: normal;
 }
 
-* {
-  font-family: "UhBeeRami";
-}
 
 :root {
   --bg-color: #fff;
@@ -25,7 +22,14 @@ body {
   font-weight: bold;
 }
 
+input{
+  font-family: "UhBeeRami";
+}
+textarea{
+  font-family: "UhBeeRami";
+}
 #diary-container {
+  font-family: "UhBeeRami";
   width: 100%;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
@@ -40,6 +44,7 @@ body {
 }
 
 .manuscript {
+  font-family: "UhBeeRami";
   display: inline-block;
   width: 300px; /* 가로 10칸(24px * 10) */
   height: 140px; /* 세로 5칸(32px * 5) */
@@ -136,6 +141,7 @@ body {
   height: 24px;
   /* flex-shrink: 0; */
   margin-top: 8px;
+  font-family: 'UhBeeRami';
 }
 .manuscript > #displayArea > .blank {
   display: inline-block;
@@ -144,6 +150,7 @@ body {
   height: 24px;
   /* flex-shrink: 0; */
   margin-top: 0;
+
 }
 
 .manuscript > :empty:not(img) {
