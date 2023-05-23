@@ -1,40 +1,41 @@
 @font-face {
-    font-family: "UhBeeKang-Ja";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeKang-Ja.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'UhBeeKang-Ja';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeKang-Ja.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    }
-*{
-    font-family: 'UhBeeKang-Ja';
-    padding: 0;
-    margin: 0;
+  font-family: "UhBeeKang-Ja";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeKang-Ja.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UhBeeKang-Ja";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeKang-Ja.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "UhBeeKang-Ja";
+  padding: 0;
+  margin: 0;
 }
 input {
-  font-family: 'UhBeeKang-Ja';
+  font-family: "UhBeeKang-Ja";
 }
 textarea {
-  font-family: 'UhBeeKang-Ja';
+  font-family: "UhBeeKang-Ja";
 }
-html{
+html {
   background-color: white;
 }
 body {
-    max-width: 430px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    flex-direction: column;
-    background-color: #fffcf2;
-    margin: 0 auto; 
+  max-width: 430px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  background-color: #fffcf2;
+  margin: 0 auto;
 }
 header {
   padding: 3% 0;
@@ -44,45 +45,45 @@ header {
   align-items: center;
   justify-content: center;
 }
-.header_left{
-width: 20%;
+.header_left {
+  width: 20%;
 }
-.header_center{
-width: 60%;
-text-align: center;
+.header_center {
+  width: 60%;
+  text-align: center;
 }
-.header_right{
-width: 20%;
+.header_right {
+  width: 20%;
 }
 
-.logo{
+.logo {
   width: 70%;
 }
 
 button,
 input {
   font-family: "UhBeeKang-Ja";
-}  
-section{
-    width: 88%;
-    height: 83%;
-    flex-grow: 1;
+}
+section {
+  width: 88%;
+  height: 83%;
+  flex-grow: 1;
 }
 a {
-    position: relative;
-    color: #519d9e;
-    text-decoration: none;
-  }
-  h1 {
-    font-family: "UhBeeKang-Ja";
-    min-width: 90px;
-    position: relative;
-    /* left: 160px; */
-  }
-footer{
+  position: relative;
+  color: #519d9e;
+  text-decoration: none;
+}
+h1 {
+  font-family: "UhBeeKang-Ja";
+  min-width: 90px;
+  position: relative;
+  /* left: 160px; */
+}
+footer {
   width: 88%;
   height: 5%;
 }
-p{
+p {
   text-align: center;
 }
