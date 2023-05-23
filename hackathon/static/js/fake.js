@@ -97,6 +97,7 @@ const onMarkChange = (e) => {
   const startIndex = img.indexOf(",") + 1;
   const trimmedString = img.substring(startIndex);
   preview.src = `data:image/png;base64,${trimmedString}`;
+  closeModal_1();
 };
 // 직인 예시(고대, 연대, 보스) 적용 함수
 const onStampChange = (e) => {
@@ -108,6 +109,7 @@ const onStampChange = (e) => {
   previews.forEach((preview) => {
     preview.src = `data:image/png;base64,${trimmedString}`;
   });
+  closeModal_2();
 };
 
 // 이미지 다운로드

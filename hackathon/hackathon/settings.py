@@ -22,7 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-@g&x&89irj$c%f8um2qe21$u6(7ind+4j#m3(5k)o_lwu5a%ay'
 
+#로컬에서 돌릴땐 이거 키고
+# DEBUG = True
+
 # SECURITY WARNING: don't run with debug turned on in production!
+
+#사이트 운영할 땐 이 밑에 꺼 두 줄 키기
 DEBUG = False
 
 ALLOWED_HOSTS = ['sonyewon.pythonanywhere.com']
