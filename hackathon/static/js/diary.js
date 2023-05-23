@@ -111,16 +111,43 @@ const previewImage = (event) => {
   }
 };
 
-// 이미지 다운로드 및 axios.post 요청 함수
+// 이미지 다운로드
 const downloadImage = async () => {
   const container = document.getElementById("diary-container");
-  const canvas = await html2canvas(container); // html2canvas 함수를 await로 호출하여 canvas를 얻음
-  const image = canvas.toDataURL(); // 스크린샷 이미지 데이터를 image 변수에 할당
+  const canvas = await html2canvas(container);
+  const image = canvas.toDataURL();
 
-  const link = document.createElement("a");
-  link.href = image;
-  link.download = "diary_screenshot.png";
-  link.click();
+  if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+    // Internet Explorer 또는 Microsoft Edge에서 실행되는 경우
+    const byteCharacters = atob(image.split(",")[1]);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    const blob = new Blob([byteArray], { type: "image/png" });
+    window.navigator.msSaveOrOpenBlob(blob, "diary_screenshot.png");
+  } else {
+    // 모바일 브라우저 또는 일반 데스크탑 브라우저에서 실행되는 경우
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "diary_screenshot.png";
+    link.target = "_blank";
+
+    if (navigator.userAgent.match(/CriOS/i)) {
+      // 크롬 브라우저에서 실행되는 경우
+      link.dispatchEvent(
+        new MouseEvent("click", {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        })
+      );
+    } else {
+      // 다른 브라우저에서 실행되는 경우
+      link.click();
+    }
+  }
 };
 
 // axios.post 요청 함수(로그인 시)
