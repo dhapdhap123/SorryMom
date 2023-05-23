@@ -12,14 +12,14 @@
   font-weight: normal;
   font-style: normal;
 }
-#diary-container,
-input,
-textarea{
-  font-family: "UhBeeRami";
-}
-
 *{
   font-family: "UhBeeKang-Ja";
+}
+
+#diary-container,
+span,
+textarea{
+  font-family: "UhBeeRami";
 }
 
 :root {
