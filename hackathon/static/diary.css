@@ -6,9 +6,6 @@
     font-style: normal;
 }
 
-* {
-  font-family: "UhBeeRami";
-}
 
 :root {
   --bg-color: #fff;
@@ -31,6 +28,7 @@ body {
   background-color: rgb(255, 255, 255);
   border: solid 0.5px black;
   overflow: hidden;
+  font-family: "UhBeeRami";
 }
 
 .manuscript-container {
@@ -224,9 +222,11 @@ body {
 textarea{
   resize: none;
   padding: 1%;
+  font-family: "UhBeeRami";
 }
 input{
   padding: 1%;
+  font-family: "UhBeeRami";
 }
 
 .hidden{
