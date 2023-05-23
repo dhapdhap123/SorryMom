@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-@g&x&89irj$c%f8um2qe21$u6(7ind+4j#m3(5k)o_lwu5a%ay
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #로컬에서 돌릴땐 이거 키고
-DEBUG = True
+# DEBUG = True
 
 #사이트 운영할 땐 이 밑에 꺼 두 줄 키기
-#DEBUG = False
-#ALLOWED_HOSTS = ['http://sonyewon.pythonanywhere.com/']
+DEBUG = False
+ALLOWED_HOSTS = ['http://sonyewon.pythonanywhere.com/']
 
 STATIC_URL = '/static/'
 
