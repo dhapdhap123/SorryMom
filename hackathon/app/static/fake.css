@@ -239,16 +239,14 @@ i {
   
 .image-preview_2{
     position: absolute;
+    bottom: 20px;
+    right: 20px;
     opacity:0.5;
 }
 #upper_stamp_1{
   position: relative;
   top: -20px;
   left: 3px;
-}
-#upper_stamp_2{
-  position: relative;
-  left: 5px;
 }
 .downloadWrapper{
   margin: 1% 0;
