@@ -34,7 +34,7 @@
 
   <div class="downloadWrapper">
     <button class="styled_button download" type="button" onclick="downloadImage()">
-      <img class="download_icon" src="../static/images/download.png" />
+      <img class="download_icon" src="{% static 'images/download.png' %}" />
     </button>
     <button class="styled_button upload hidden" type="button" onclick="uploadImage()">업로드</button>
   </div>
@@ -92,5 +92,5 @@
   </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="../static/js/diary.js"></script>
+  <script src="{% static 'js/diary.js' %}"></script>
   {% endblock %}

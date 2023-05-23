@@ -13,10 +13,10 @@
         <div class="child">
             
             <div class="our_example" id="our_example">
-                <img src="../static/images/layer.png" class="layer" />
+                <img src="{% static 'images/layer.png' %}" class="layer" />
                 <div class="title_div">{{title}}</div>
                 <div class="stamp_container_div">
-                    <img src="../static/images/stampbox.png" height="30px" width="30px">
+                    <img src="{% static 'images/stampbox.png' %}" height="30px" width="30px">
                 </div>
                 <div class="stamp_div_1">
                     <img id="upper_stamp_1" class="image-preview_2" src="data:image/png;base64,{{stampImg1}}" height="15px" width="15px">
@@ -33,7 +33,7 @@
 
             <div class="downloadWrapper">
                 <button class="styled_button download" type="button" onclick="downloadImage()">
-                    <img class="download_icon" src="../static/images/download.png" />
+                    <img class="download_icon" src="{% static 'images/download.png' %}" />
                 </button>
                 <button class="styled_button upload hidden" type="button" onclick="uploadImage()">업로드</button>
             </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="mark_div" id="add_mark">
                             <label class="custom-input">
-                                <img class="custom-button" src="../static/images/add.png" />
+                                <img class="custom-button" src="{% static 'images/add.png' %}" />
                                 <input class="mark_img add_img" type="file" name="image" id="image-input" onChange="previewImage(event)" />
                             </label>
                         </div>
@@ -118,7 +118,7 @@
                         </div>
                         <div class="mark_div" id="add_mark">
                             <label class="custom-input">
-                                <img class="custom-button" src="../static/images/add.png" />
+                                <img class="custom-button" src="{% static 'images/add.png' %}" />
                                 <input class="mark_img add_img" type="file" name="image" id="image-input" onChange="previewImage_2(event)" />
                             </label>
                         </div>
@@ -135,5 +135,5 @@
     </div>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../static/js/fake.js"></script>
+    <script src="{% static 'js/fake.js' %}"></script>
 {% endblock %}
