@@ -1,50 +1,37 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>하찮아도 괜찮아</title>
-    {% load static %}
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
-  </head>
-  <body>
-    <header>
-      <a class="header_left" href="{% url 'home' %}" ><img class="logo" src="{% static 'images/logo.png' %}"/></a>
-      <h1 class="header_center main text-neon1 wave-text">하찮괜찮</h1>
-      <div class="header_right"></div>
-    </header>
-    <section>
-      <div class="title">구라증과 그림일기</div>
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+{% endblock css %}
 
-      <div class="arrow_container" id="arrow_1">
-        <img class="arrow" src="{% static 'images/landingPage/3.png' %}" />
-      </div>
+{% block h1 %}하찮괜찮{% endblock h1 %}
 
-      <div class="box">
-        <div class="image-container">
-          <a href="{% url 'fake' %}"
-            ><img class="pic" src="{% static 'images/landingPage/a.png' %}"
-          /></a>
-        </div>
+{% block section %}
+<div class="container">
+  <div class="title">구라증과 그림일기</div>
 
-        <div class="image-container">
-          <a href="{% url 'diary' %}"
-            ><img class="pic" src="{% static 'images/landingPage/b.png' %}"
-          /></a>
-        </div>
-      </div>
+  <div class="arrow_container" id="arrow_1">
+    <img class="arrow" src="{% static 'images/landingPage/3.png' %}" />
+  </div>
 
-      <div class="arrow_container" id="arrow_2">
-        <img class="arrow1" src="{% static 'images/landingPage/6.png' %}" />
-      </div>
-      <div class="click">클릭하쉴?</div>
-    </section>  
-    <footer>
-      <div>
-        <p style="font-size:1rem;">Developed by KU NEXT, Team 'SorryMom'</p>
-        <p style="font-size:0.7em;">Lee Youngchan, Park Gyungbin, Son Yewon<br/>Kim Hyein, Choi Seongho</p>
-      </div>
-    </footer>
-  </body>
-</html>
+  <div class="box">
+    <div class="image-container">
+      <a href="{% url 'fake' %}">
+        <img class="pic" src="{% static 'images/landingPage/a.png' %}"/>
+      </a>
+    </div>
+
+    <div class="image-container">
+      <a href="{% url 'diary' %}">
+        <img class="pic" src="{% static 'images/landingPage/b.png' %}"/>
+      </a>
+    </div>
+  </div>
+
+  <div class="arrow_container" id="arrow_2">
+    <img class="arrow1" src="{% static 'images/landingPage/6.png' %}" />
+  </div>
+
+  <div class="click">클릭하쉴?</div>
+</div>
+{% endblock %}

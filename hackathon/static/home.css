@@ -53,11 +53,15 @@ section {
   flex-grow: 1;
 }
 
-.main {
+h1 {
   text-align: center;
   font-family: "UhBeeJJIBBABBA";
   font-size: 50px;
   font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
+    0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
+    0 0 75px #eafa06;
 }
 .arrow {
   width: 50px;
@@ -134,12 +138,6 @@ section {
   font-family: "UhBeeJJIBBABBA";
 }
 
-.text-neon1 {
-  color: #fff;
-  text-shadow: 0 0 5px #320000, 0 0 10px #fff, 0 0 15px #5a0606,
-    0 0 20px #ff00de, 0 0 30px #cdf006, 0 0 40px #fff200, 0 0 55px #ff00de,
-    0 0 75px #eafa06;
-}
 footer {
   height: 5%;
 }
