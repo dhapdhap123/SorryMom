@@ -3,7 +3,7 @@ Description=uWSGI service
 After=syslog.target
  
 [Service]
-ExecStart=/home/ubuntu/myvenv/bin/uwsgi -i /srv/<프로젝트 경로>/.config/uwsgi/uwsgi.ini
+ExecStart=/home/ubuntu/myvenv/bin/uwsgi -i /srv/SorryMom/hackathon/.config/uwsgi/uwsgi.ini
  
 Restart=always
 KillSignal=SIGQUIT
