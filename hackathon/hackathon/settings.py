@@ -33,6 +33,11 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR,"statics")
 
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "ap-northeast-2.compute.amazonaws.com"
+]
 
 # Application definition
 
